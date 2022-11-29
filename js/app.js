@@ -127,6 +127,7 @@ for (let i = 0; i < 2; i += 1) {
 }
 renderBoard();
 
+
 const tiposDeFichas = ['1 peon', '2 torre', '3 caballo', '4 alfil', '5 reina', '6 rey'];
 
 console.log(tiposDeFichas.length);
@@ -161,3 +162,23 @@ pieza3.verEspecificaciones();
 pieza4.verEspecificaciones();
 pieza5.verEspecificaciones();
 pieza6.verEspecificaciones();
+
+let titulo = document.getElementsByTagName("h1")[0];
+
+titulo.className = 'colorMarron';
+
+let usuario;
+let password;
+let usuarioLS;
+
+usuarioLS = localStorage.getItem('usuario');
+console.log(usuarioLS);
+
+if (usuarioLS == null) {
+    usuario = prompt("ingrese usuario.");
+    password = prompt("ingrese contraseña.");
+
+    localStorage.setItem("usuario", usuario);
+} else {
+    alert(`Hola ${usuarioLS}`)
+}
